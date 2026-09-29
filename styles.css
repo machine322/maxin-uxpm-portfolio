@@ -41,7 +41,7 @@
 .project-visual::before,.project-visual::after{content:"";position:absolute;pointer-events:none;border-radius:inherit}
 .project-visual::before{
   z-index:4;inset:0;border:2px solid transparent;--foil-angle:0deg;
-  background:conic-gradient(from var(--foil-angle),#fff 0%,#9ca8b8 14%,#f9fbff 28%,#8793a3 43%,#fff 58%,#a8b4c4 73%,#f7f9fc 88%,#fff 100%) border-box;
+  background:conic-gradient(from var(--foil-angle),#778292 0%,#eef2f7 12%,#8792a2 25%,#fff 37%,#8c97a7 51%,#f5f7fa 64%,#758091 78%,#e9edf2 90%,#778292 100%) border-box;
   -webkit-mask:linear-gradient(#fff 0 0) padding-box,linear-gradient(#fff 0 0);
   -webkit-mask-composite:xor;mask-composite:exclude;
   opacity:0;filter:none;
@@ -49,8 +49,8 @@
 }
 .project-visual::after{
   z-index:3;inset:-45% -80%;
-  background:linear-gradient(110deg,transparent 30%,rgba(190,204,223,.035) 39%,rgba(216,226,240,.16) 46%,rgba(242,246,252,.34) 51%,rgba(205,217,234,.23) 57%,rgba(224,233,244,.11) 65%,rgba(190,204,223,.025) 73%,transparent 80%);
-  mix-blend-mode:screen;filter:blur(1.6px);opacity:0;
+  background:linear-gradient(110deg,transparent 23%,rgba(190,204,223,.018) 34%,rgba(216,226,240,.07) 43%,rgba(242,246,252,.2) 51%,rgba(205,217,234,.12) 60%,rgba(224,233,244,.055) 70%,rgba(190,204,223,.012) 80%,transparent 88%);
+  mix-blend-mode:screen;filter:blur(2.4px);opacity:0;
   transform:translateX(-48%) rotate(10deg);
   transition:transform 2.6s cubic-bezier(.16,.68,.24,1),opacity .8s ease;
 }
@@ -61,7 +61,7 @@
   box-shadow:0 22px 48px rgba(25,30,31,.15),0 0 27px rgba(171,187,207,.2),inset 0 0 18px rgba(244,248,255,.07)
 }
 .project-card:hover .project-visual::before{opacity:1;filter:drop-shadow(0 0 6px rgba(218,228,242,.74));animation:silver-edge-orbit 10s linear infinite}
-.project-card:hover .project-visual::after{opacity:1;transform:translateX(48%) rotate(10deg)}
+.project-card:hover .project-visual::after{opacity:.72;transform:translateX(48%) rotate(10deg)}
 @keyframes silver-edge-orbit{to{--foil-angle:360deg}}
 @media(max-width:640px){.project-visual{border-radius:18px !important;clip-path:inset(0 round 18px)}}
 @media(prefers-reduced-motion:reduce){.project-visual,.project-visual::before,.project-visual::after{transition:none;animation:none!important}.project-card:hover .project-visual,.project-card:hover .project-visual::after,.project-card:focus-visible .project-visual::after{transform:none}}
