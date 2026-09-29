@@ -27,55 +27,41 @@
 .hero-art .screen{cursor:default}
 @media(max-width:640px){.hero-vip-card,.hero-voc-card{padding:16px 13px;gap:8px}.hero-vip-gem{width:58px;height:58px;margin:6px 0}.hero-vip-card>b{font-size:21px}.hero-voc-card>b{font-size:12px}.hero-voc-grid i{height:54px}.hero-voc-tags{gap:4px}.hero-voc-tags i{padding:4px 6px;font-size:6px}.card-cashback .project-info{padding:18px 0 0}}
 
-/* Project cover finish: rounded champagne edge, with a restrained glass-light pass on hover. */
+/* Project cover finish: clearly visible rounded glass with a moving champagne highlight. */
 .project-visual{
   isolation:isolate;
-  border:1px solid rgba(255,255,255,.42);
-  border-radius:20px;
-  box-shadow:0 8px 24px rgba(20,25,25,.07);
+  overflow:hidden;
+  border:1px solid rgba(226,198,132,.72);
+  border-radius:24px !important;
+  clip-path:inset(0 round 24px);
+  box-shadow:0 9px 28px rgba(20,25,25,.09),inset 0 0 0 1px rgba(255,255,255,.12);
   transition:transform .42s cubic-bezier(.2,.7,.2,1),box-shadow .42s,border-color .42s;
 }
-.project-visual::before,.project-visual::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  pointer-events:none;
-}
+.project-visual::before,.project-visual::after{content:"";position:absolute;pointer-events:none;border-radius:inherit}
 .project-visual::before{
-  z-index:4;
-  padding:1.15px;
-  border-radius:inherit;
-  background:linear-gradient(136deg,rgba(255,255,255,.86) 0%,rgba(231,211,161,.68) 15%,rgba(255,255,255,.1) 32%,rgba(211,180,110,.38) 52%,rgba(255,255,255,.72) 75%,rgba(207,175,104,.56) 100%);
-  opacity:.58;
-  -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
-  -webkit-mask-composite:xor;
-  mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
-  mask-composite:exclude;
-  transition:opacity .42s,filter .42s;
+  z-index:4;inset:0;border:2px solid transparent;
+  background:linear-gradient(128deg,#fff6d9 0%,#c69b4e 16%,rgba(255,255,255,.24) 31%,#f1d997 47%,#ad8135 63%,#fff1c6 79%,#bd9349 100%) border-box;
+  -webkit-mask:linear-gradient(#fff 0 0) padding-box,linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;
+  opacity:.9;filter:drop-shadow(0 0 3px rgba(234,204,133,.36));
+  transition:opacity .35s,filter .4s;
 }
 .project-visual::after{
-  z-index:3;
-  inset:-40% -55%;
-  background:linear-gradient(113deg,transparent 35%,rgba(255,255,255,.035) 42%,rgba(255,249,230,.28) 47%,rgba(255,255,255,.58) 50%,rgba(228,204,151,.26) 53%,rgba(255,255,255,.06) 58%,transparent 65%);
-  mix-blend-mode:screen;
-  filter:blur(.55px);
-  opacity:0;
-  transform:translate3d(-72%,0,0) rotate(10deg);
-  transition:transform .95s cubic-bezier(.2,.65,.2,1),opacity .35s ease;
+  z-index:3;inset:-45% -80%;
+  background:linear-gradient(110deg,transparent 38%,rgba(255,255,255,.1) 44%,rgba(255,249,224,.72) 49%,rgba(255,255,255,.94) 51%,rgba(223,193,129,.58) 54%,rgba(255,255,255,.12) 60%,transparent 66%);
+  mix-blend-mode:screen;filter:blur(1px);opacity:0;
+  transform:translateX(-48%) rotate(10deg);
+  transition:transform .9s cubic-bezier(.2,.65,.2,1),opacity .22s ease;
 }
 .project-visual>.visual-index{z-index:5}
 .project-card:focus-visible{outline:none}
-.project-card:focus-visible .project-visual{box-shadow:0 0 0 3px rgba(216,190,130,.3),0 18px 38px rgba(25,30,31,.13)}
-@media(hover:hover){
-  .project-card:hover .project-visual{transform:translateY(-7px);border-color:rgba(237,220,177,.78);box-shadow:0 22px 48px rgba(25,30,31,.15),0 0 26px rgba(207,177,111,.17)}
-  .project-card:hover .project-visual::before{opacity:1;filter:drop-shadow(0 0 3px rgba(223,195,127,.52))}
-  .project-card:hover .project-visual::after{opacity:.92;transform:translate3d(72%,0,0) rotate(10deg)}
-  .project-card:focus-visible .project-visual::before{opacity:1}
-  .project-card:focus-visible .project-visual::after{opacity:.75;transform:translate3d(72%,0,0) rotate(10deg)}
+.project-card:focus-visible .project-visual{box-shadow:0 0 0 3px rgba(216,190,130,.38),0 18px 38px rgba(25,30,31,.13)}
+.project-card:hover .project-visual,.project-card:focus-visible .project-visual{
+  transform:translateY(-7px);border-color:#f3daa0;
+  box-shadow:0 22px 48px rgba(25,30,31,.17),0 0 30px rgba(207,177,111,.28),inset 0 0 18px rgba(255,246,219,.08)
 }
-@media(max-width:640px){.project-visual{border-radius:16px}}
-@media(prefers-reduced-motion:reduce){
-  .project-visual,.project-visual::before,.project-visual::after{transition:none}
-  .project-card:hover .project-visual,.project-card:hover .project-visual::after,.project-card:focus-visible .project-visual::after{transform:none}
-}
+.project-card:hover .project-visual::before,.project-card:focus-visible .project-visual::before{opacity:1;filter:drop-shadow(0 0 7px rgba(255,225,157,.95))}
+.project-card:hover .project-visual::after,.project-card:focus-visible .project-visual::after{opacity:1;transform:translateX(48%) rotate(10deg)}
+@media(max-width:640px){.project-visual{border-radius:18px !important;clip-path:inset(0 round 18px)}}
+@media(prefers-reduced-motion:reduce){.project-visual,.project-visual::before,.project-visual::after{transition:none}.project-card:hover .project-visual,.project-card:hover .project-visual::after,.project-card:focus-visible .project-visual::after{transform:none}}
 
