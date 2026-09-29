@@ -49,8 +49,8 @@
 }
 .project-visual::after{
   z-index:3;inset:-45% -80%;
-  background:linear-gradient(110deg,transparent 38%,rgba(235,242,250,.08) 44%,rgba(245,249,255,.48) 49%,rgba(255,255,255,.78) 51%,rgba(208,219,234,.35) 54%,rgba(255,255,255,.1) 60%,transparent 66%);
-  mix-blend-mode:screen;filter:blur(1px);opacity:0;
+  background:linear-gradient(110deg,transparent 30%,rgba(190,204,223,.035) 39%,rgba(216,226,240,.16) 46%,rgba(242,246,252,.34) 51%,rgba(205,217,234,.23) 57%,rgba(224,233,244,.11) 65%,rgba(190,204,223,.025) 73%,transparent 80%);
+  mix-blend-mode:screen;filter:blur(1.6px);opacity:0;
   transform:translateX(-48%) rotate(10deg);
   transition:transform 2.6s cubic-bezier(.16,.68,.24,1),opacity .8s ease;
 }
