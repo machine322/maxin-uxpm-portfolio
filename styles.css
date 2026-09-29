@@ -27,11 +27,12 @@
 .hero-art .screen{cursor:default}
 @media(max-width:640px){.hero-vip-card,.hero-voc-card{padding:16px 13px;gap:8px}.hero-vip-gem{width:58px;height:58px;margin:6px 0}.hero-vip-card>b{font-size:21px}.hero-voc-card>b{font-size:12px}.hero-voc-grid i{height:54px}.hero-voc-tags{gap:4px}.hero-voc-tags i{padding:4px 6px;font-size:6px}.card-cashback .project-info{padding:18px 0 0}}
 
-/* Project cover finish: clearly visible rounded glass with a moving champagne highlight. */
+/* Project cover finish: hover-only silver foil and a slow, soft glass reflection. */
+@property --foil-angle{syntax:"<angle>";inherits:false;initial-value:0deg}
 .project-visual{
   isolation:isolate;
   overflow:hidden;
-  border:1px solid rgba(226,198,132,.72);
+  border:1px solid rgba(204,211,220,.42);
   border-radius:24px !important;
   clip-path:inset(0 round 24px);
   box-shadow:0 9px 28px rgba(20,25,25,.09),inset 0 0 0 1px rgba(255,255,255,.12);
@@ -39,31 +40,29 @@
 }
 .project-visual::before,.project-visual::after{content:"";position:absolute;pointer-events:none;border-radius:inherit}
 .project-visual::before{
-  z-index:4;inset:0;border:2px solid transparent;
-  background:linear-gradient(128deg,#fff6d9 0%,#c69b4e 16%,rgba(255,255,255,.24) 31%,#f1d997 47%,#ad8135 63%,#fff1c6 79%,#bd9349 100%) border-box;
-  background-size:220% 220%;background-position:0% 0%;
+  z-index:4;inset:0;border:2px solid transparent;--foil-angle:0deg;
+  background:conic-gradient(from var(--foil-angle),#fff 0%,#9ca8b8 14%,#f9fbff 28%,#8793a3 43%,#fff 58%,#a8b4c4 73%,#f7f9fc 88%,#fff 100%) border-box;
   -webkit-mask:linear-gradient(#fff 0 0) padding-box,linear-gradient(#fff 0 0);
   -webkit-mask-composite:xor;mask-composite:exclude;
-  opacity:.9;filter:drop-shadow(0 0 3px rgba(234,204,133,.36));
-  transition:opacity .35s,filter .4s;
+  opacity:0;filter:none;
+  transition:opacity .5s ease,filter .7s ease;
 }
 .project-visual::after{
   z-index:3;inset:-45% -80%;
-  background:linear-gradient(110deg,transparent 38%,rgba(255,255,255,.1) 44%,rgba(255,249,224,.72) 49%,rgba(255,255,255,.94) 51%,rgba(223,193,129,.58) 54%,rgba(255,255,255,.12) 60%,transparent 66%);
+  background:linear-gradient(110deg,transparent 38%,rgba(235,242,250,.08) 44%,rgba(245,249,255,.48) 49%,rgba(255,255,255,.78) 51%,rgba(208,219,234,.35) 54%,rgba(255,255,255,.1) 60%,transparent 66%);
   mix-blend-mode:screen;filter:blur(1px);opacity:0;
   transform:translateX(-48%) rotate(10deg);
-  transition:transform .9s cubic-bezier(.2,.65,.2,1),opacity .22s ease;
+  transition:transform 2.6s cubic-bezier(.16,.68,.24,1),opacity .8s ease;
 }
 .project-visual>.visual-index{z-index:5}
-.project-card:focus-visible{outline:none}
-.project-card:focus-visible .project-visual{box-shadow:0 0 0 3px rgba(216,190,130,.38),0 18px 38px rgba(25,30,31,.13)}
-.project-card:hover .project-visual,.project-card:focus-visible .project-visual{
-  transform:translateY(-7px);border-color:#f3daa0;
-  box-shadow:0 22px 48px rgba(25,30,31,.17),0 0 30px rgba(207,177,111,.28),inset 0 0 18px rgba(255,246,219,.08)
+.project-card:focus-visible{outline:2px solid #9ca8b8;outline-offset:4px}
+.project-card:hover .project-visual{
+  transform:translateY(-5px);border-color:rgba(235,240,247,.95);
+  box-shadow:0 22px 48px rgba(25,30,31,.15),0 0 27px rgba(171,187,207,.2),inset 0 0 18px rgba(244,248,255,.07)
 }
-.project-card:hover .project-visual::before,.project-card:focus-visible .project-visual::before{opacity:1;filter:drop-shadow(0 0 7px rgba(255,225,157,.95));animation:gold-edge-glide 1.7s ease-in-out infinite alternate}
-.project-card:hover .project-visual::after,.project-card:focus-visible .project-visual::after{opacity:1;transform:translateX(48%) rotate(10deg)}
-@keyframes gold-edge-glide{0%{background-position:0% 0%;filter:drop-shadow(0 0 4px rgba(225,192,119,.72))}100%{background-position:100% 100%;filter:drop-shadow(0 0 9px rgba(255,231,176,1))}}
+.project-card:hover .project-visual::before{opacity:1;filter:drop-shadow(0 0 6px rgba(218,228,242,.74));animation:silver-edge-orbit 10s linear infinite}
+.project-card:hover .project-visual::after{opacity:1;transform:translateX(48%) rotate(10deg)}
+@keyframes silver-edge-orbit{to{--foil-angle:360deg}}
 @media(max-width:640px){.project-visual{border-radius:18px !important;clip-path:inset(0 round 18px)}}
 @media(prefers-reduced-motion:reduce){.project-visual,.project-visual::before,.project-visual::after{transition:none;animation:none!important}.project-card:hover .project-visual,.project-card:hover .project-visual::after,.project-card:focus-visible .project-visual::after{transform:none}}
 
