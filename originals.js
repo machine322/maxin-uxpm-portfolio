@@ -1,6 +1,9 @@
 const sources={
   vip:{title:'VIP 功能页｜原版项目章节',intro:'VIP 体验提升专项的原版章节，保留研究、策略、交互页面和测前 / 测后数据。',label:'VIP 功能页数据体验提升专项',pages:'原总集第 3–19 页 · 17 页原版内容',file:'assets/vip-original.pdf',page:1},
-  voc:{title:'VOC 体验洞察｜VoiceChanger 完整原版章节',intro:'从产品背景、体验分析到问题归纳和多轮界面方案，保留完整原稿章节。',label:'VOC 体验洞察 / VoiceChanger',pages:'原总集第 20–43 页 · 24 页原版内容',file:'assets/voc-original-complete.pdf',page:1},
+  voc:{title:'VOC 体验洞察｜VoiceChanger 完整原版章节',intro:'从产品背景、体验分析到问题归纳和多轮界面方案，24 页高清原稿分为四段展示。使用材料选择器切换各段。',label:'VOC 体验洞察 / VoiceChanger',pages:'第 1/4 段 · 总集第 20–25 页（共 24 页）',file:'assets/voc-original-part-01.pdf',page:1},
+  'voc-p2':{title:'VOC 体验洞察｜原版章节 2/4',intro:'完整 VOC 原稿第 2 段。使用材料选择器可查看全部 24 页。',label:'VOC 体验洞察 / VoiceChanger',pages:'第 2/4 段 · 总集第 26–31 页',file:'assets/voc-original-part-02.pdf',page:1},
+  'voc-p3':{title:'VOC 体验洞察｜原版章节 3/4',intro:'完整 VOC 原稿第 3 段。使用材料选择器可查看全部 24 页。',label:'VOC 体验洞察 / VoiceChanger',pages:'第 3/4 段 · 总集第 32–37 页',file:'assets/voc-original-part-03.pdf',page:1},
+  'voc-p4':{title:'VOC 体验洞察｜原版章节 4/4',intro:'完整 VOC 原稿第 4 段。使用材料选择器可查看全部 24 页。',label:'VOC 体验洞察 / VoiceChanger',pages:'第 4/4 段 · 总集第 38–43 页',file:'assets/voc-original-part-04.pdf',page:1},
   cashback:{title:'模拟返现｜独立案例全稿',intro:'独立产品 Owner 项目案例，保留原始策略、数据、流程与复盘内容。',label:'BTCC 模拟返现项目集',pages:'24 页 · 独立项目原稿',file:'assets/cashback-full-original.pdf',page:1},
   btcc:{title:'BTCC 模拟体验｜原版流程章节',intro:'总集中模拟策略、升级流程、任务中心及后台配置对应的原版章节。',label:'BTCC 模拟返现交互材料',pages:'原总集第 81–88 页 · 8 页原版内容',file:'assets/btcc-sim-original.pdf',page:1},
   contract:{title:'合约交易页优化｜原版交互方案',intro:'原版长页，覆盖合约交易主流程、输入规则、挂单边界和状态反馈。可纵向滚动，放大查看交互标注。',label:'合约交易主流程改动示意与交互说明',pages:'原总集第 89 页 · 1 页长幅方案',file:'assets/contract-original.pdf',page:1},
